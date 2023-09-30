@@ -123,9 +123,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 849
-        width: 1080
-        height: 200
+        y: 699.3334
+        width: 360
+        height: 349.66666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: WsdMC-UscZ0_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 649
-        width: 1080
-        height: 200
+        x: 360
+        y: 699.3334
+        width: 360
+        height: 349.66666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,10 +164,10 @@ TextureImporter:
       name: WsdMC-UscZ0_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 449
-        width: 1080
-        height: 200
+        x: 720
+        y: 699.3334
+        width: 360
+        height: 349.66666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,9 +186,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 249
-        width: 1080
-        height: 200
+        y: 350.33334
+        width: 360
+        height: 349.66666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: WsdMC-UscZ0_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 49
-        width: 1080
-        height: 200
+        x: 360
+        y: 350.33334
+        width: 360
+        height: 349.66666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,6 +219,90 @@ TextureImporter:
       bones: []
       spriteID: a0f6146eb9f525120800000000000000
       internalID: 2401086674529513226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WsdMC-UscZ0_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 350.33334
+        width: 360
+        height: 349.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9095e7ecfb9cf3459bd65982ae3c8b5
+      internalID: -845643930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WsdMC-UscZ0_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 360
+        height: 349.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3969d867e5d756478ddbac15a9bb931
+      internalID: -628373738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WsdMC-UscZ0_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1.3333435
+        width: 360
+        height: 349.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d41ceee2b2bc44a9979d55bcefaa8d
+      internalID: 252580993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WsdMC-UscZ0_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1.3333435
+        width: 360
+        height: 349.66666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f474c18bb457f374d9ca163b6a6b6ed0
+      internalID: -1759396841
       vertices: []
       indices: 
       edges: []
@@ -235,9 +319,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       WsdMC-UscZ0_0: 5069473639437767572
+      WsdMC-UscZ0_6: -628373738
       WsdMC-UscZ0_3: 1159951059866710080
       WsdMC-UscZ0_1: -7337705885796255590
+      WsdMC-UscZ0_7: 252580993
       WsdMC-UscZ0_2: -1566074111317093269
+      WsdMC-UscZ0_5: -845643930
+      WsdMC-UscZ0_8: -1759396841
       WsdMC-UscZ0_4: 2401086674529513226
   spritePackingTag: 
   pSDRemoveMatte: 0
