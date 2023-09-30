@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14088dd4faf4c1ba9b5ad36867284f6, type: 3}
+  m_Name: New Game Puzzle
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 5069473639437767572, guid: 9866efc201a1d4a44a1633bc18940664, type: 3}
+  - {fileID: -7337705885796255590, guid: 9866efc201a1d4a44a1633bc18940664, type: 3}
+  - {fileID: -1566074111317093269, guid: 9866efc201a1d4a44a1633bc18940664, type: 3}
+  - {fileID: 1159951059866710080, guid: 9866efc201a1d4a44a1633bc18940664, type: 3}
+  - {fileID: 2401086674529513226, guid: 9866efc201a1d4a44a1633bc18940664, type: 3}
