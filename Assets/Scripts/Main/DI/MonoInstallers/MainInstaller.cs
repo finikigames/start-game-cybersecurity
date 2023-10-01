@@ -15,13 +15,15 @@ namespace Main.DI.MonoInstallers {
             Container
                 .BindInterfacesAndSelfTo<FlowService>()
                 .AsSingle();
-            
-            Container
-                .BindInterfacesAndSelfTo<MainService>()
-                .AsSingle();
+
             
             Container
                 .BindInterfacesAndSelfTo<FlowConditionService>()
+                .AsSingle();
+            
+            
+            Container
+                .BindInterfacesAndSelfTo<LetterGeneratorService>()
                 .AsSingle();
         }
     }

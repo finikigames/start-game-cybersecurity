@@ -29,6 +29,10 @@ namespace Global.UI.InteractableView {
 
             var rectTransform = (RectTransform)Button.transform;
 
+            if (data.ButtonSprite != null) {
+                Button.image.sprite = data.ButtonSprite;
+            }
+
             rectTransform.anchoredPosition = data.ButtonPosition;
             rectTransform.sizeDelta = data.ButtonSize;
         }

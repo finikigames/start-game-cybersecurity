@@ -1,17 +1,20 @@
 ﻿using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Global.UI.DialogView {
     public class DialogWindow : BaseWindow {
         public TextMeshProUGUI NameText;
         public TextMeshProUGUI ReplicaText;
+        public VerticalLayoutGroup Group;
         
         public DialogConfig Config;
 
         [SerializeField] private float _timeBetweenCharacters;
         
-        public override void Initialize(string id) {
+        public override async void Initialize(string id) {
             var data = Config.Data[id];
 
             NameText.text = data.Name;
