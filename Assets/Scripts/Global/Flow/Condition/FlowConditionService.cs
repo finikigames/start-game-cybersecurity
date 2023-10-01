@@ -9,6 +9,8 @@ namespace Global.Flow.Condition {
 
         public void Initialize() {
             _conditions = new Dictionary<string, BaseCondition>();
+            
+            RegisterCondition("screen_click", new ScreenClickCondition());
         }
 
         public void RegisterCondition(string conditionId, BaseCondition condition) {
@@ -20,6 +22,8 @@ namespace Global.Flow.Condition {
         }
 
         public bool CheckConditions(List<string> conditions) {
+            int readyCount = 0;
+            
             foreach (var conditionId in conditions) {
                 if (!_conditions.ContainsKey(conditionId)) {
                     Debug.LogWarning($"There is no condition with id {conditionId}");
@@ -27,10 +31,10 @@ namespace Global.Flow.Condition {
                 }
                 var condition = _conditions[conditionId];
 
-                if (!condition.Ready) return false;
+                if (condition.Ready) readyCount++;
             }
 
-            return true;
+            return readyCount == conditions.Count;
         }
 
         public void Tick() {
