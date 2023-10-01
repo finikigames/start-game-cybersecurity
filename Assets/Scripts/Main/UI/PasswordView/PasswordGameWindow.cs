@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Global.Flow.Condition;
 using Global.UI;
 using Main.Configs;
 using Main.Services;
@@ -15,6 +16,7 @@ namespace Main.UI.PasswordView {
         
         private LetterGeneratorService _letterGeneratorService;
         private PasswordMiniGameConfig _config;
+        private FlowConditionService _conditionService;
 
         private char _currentCharacter;
         private int _index;
@@ -28,11 +30,18 @@ namespace Main.UI.PasswordView {
         private bool _needMain;
         private List<LetterView> _viewsToDelete;
 
+        private bool _pressed;
+
+        private LetterView _mainView;
+        private PasswordGameCondition _condition;
+
         [Inject]
         private void Construct(LetterGeneratorService letterGeneratorService,
-                               PasswordMiniGameConfig config) {
+                               PasswordMiniGameConfig config,
+                               FlowConditionService conditionService) {
             _letterGeneratorService = letterGeneratorService;
             _config = config;
+            _conditionService = conditionService;
         }
 
         public override void Initialize(string id) {
@@ -40,6 +49,9 @@ namespace Main.UI.PasswordView {
         }
 
         private void Awake() {
+            _condition = new PasswordGameCondition();
+            _conditionService.RegisterCondition("password_minigame_win", _condition);
+            
             _views = new List<LetterView>();
             _viewsToDelete = new List<LetterView>();
 
@@ -51,36 +63,58 @@ namespace Main.UI.PasswordView {
         private void SpawnLetter(string character, bool main = false) {
             var letterView = _letterGeneratorService.Get(Parent);
 
+            if (main) {
+                _mainView = letterView;
+            }
+            
             var randomIndex = Random.Range(0, SpawnPoints.Count);
 
-            letterView.SetText(character);
             letterView.SetMainVisibility(main);
+            letterView.SetText(character);
             var randomPoint = SpawnPoints[randomIndex];
 
             letterView.transform.position = randomPoint.position;
-            letterView.Main = main;
             _views.Add(letterView);
         }
 
         private void Update() {
             _spawnTime += Time.deltaTime;
 
-            CheckCurrentInput();
-            
+            if (_index >= _passwordCopy.Length) {
+                _condition.Ready = true;
+                return;
+            }
             MoveLetters();
 
             CheckLetterPosition();
             CheckLetterInput();
+
+            if (_pressed) {
+                _needMain = true;
+
+                _views.Remove(_mainView);
+                
+                _letterGeneratorService.Release(_mainView.gameObject);
+                _index++;
+                _pressed = false;
+                _mainView = null;
+            }
             
             if (_spawnTime < _config.SpawnDelta) return;
 
             CheckNeedMain();
             _spawnTime = 0f;
 
-            var randomIndex = Random.Range(0, _config.OtherCharacters.Length);
-            var randomLetter = _config.OtherCharacters[randomIndex];
-            
-            SpawnLetter(randomLetter, _needMain);
+            string letter;
+            if (!_needMain) {
+                var randomIndex = Random.Range(0, _config.OtherCharacters.Length);
+                letter = _config.OtherCharacters[randomIndex];
+            }
+            else {
+                letter = _passwordCopy[_index].ToString();
+            }
+
+            SpawnLetter(letter, _needMain);
         }
 
         private void CheckNeedMain() {
@@ -92,12 +126,6 @@ namespace Main.UI.PasswordView {
             }
 
             _needMain = !hasMain;
-        }
-
-        private void CheckCurrentInput() {
-            //var status = Input.GetKeyDown("N");
-            
-            //Debug.Log(status);
         }
 
         private void CheckLetterPosition() {
@@ -119,6 +147,12 @@ namespace Main.UI.PasswordView {
         }
 
         private void CheckLetterInput() {
+            var currentCharacter = _passwordCopy[_index];
+
+            var upper = currentCharacter.ToString().ToUpper();
+
+            var keyCode = Enum.Parse<KeyCode>(upper);
+            _pressed = Input.GetKeyDown(keyCode);
         }
 
         private void MoveLetters() {
