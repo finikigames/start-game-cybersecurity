@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DragPuzzle.Configs {
-    [CreateAssetMenu(menuName = "Content/DragPuzzle/DragPuzzleConfig")]
-    public class DragPuzzleGameConfig : ScriptableObject {
+    [Serializable]
+    public class DragPuzzleGameConfig{
         public float DropDistance;
         public Sprite[] Sprites;
     }

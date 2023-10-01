@@ -1,34 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DragPuzzle.Configs;
+using DragPuzzle.UI;
 using UnityEngine;
 using Zenject;
 
 namespace DragPuzzle.Services {
-    public class DragPuzzleService : IInitializable, ITickable {
+    public class DragPuzzleService : IInitializable {
         private readonly DragPuzzleGameConfig _gameConfig;
+        private readonly DragPuzzleField _puzzleField;
+        
+        public Action OnDragPuzzleWin { get; set; }
 
-        private Dictionary<string, string> _puzzleMatch = new();
-
-        public DragPuzzleService(DragPuzzleGameConfig gameConfig) {
+        public DragPuzzleService(DragPuzzleGameConfig gameConfig,
+                                 DragPuzzleField puzzleField) {
             _gameConfig = gameConfig;
+            _puzzleField = puzzleField;
         } 
-        
-        public void Tick() {
-        }
-
         public void Initialize() {
+            var sprites = _gameConfig.Sprites;
+            
+            _puzzleField.InitializeFieldView(sprites);
+            _puzzleField.InitializeDragViews(Check, sprites);
         }
         
-        //logic check distance between piece and ghost piece
-        private void Check() {
-            Vector3 from = Vector3.zero;//rofls
-            Vector3 to = Vector3.zero;//rofls
+        private void Check(string id) {
+            Vector2 from = _puzzleField.GetDragPuzzlePosition(id);
+            Vector2 to = _puzzleField.GetGhostPosition(id);
             var distance = Vector3.Distance(from, to);
 
-            if (distance < _gameConfig.DropDistance) {
-                //setLock
-                //fit into ghost piece
-            }
+            if (!(distance < _gameConfig.DropDistance)) return;
+            
+            _puzzleField.SetPuzzleLock(id);
+            if (!_puzzleField.CheckWin()) return;
+            
+            OnDragPuzzleWin?.Invoke();
+            Debug.Log("You win drag puzzle game!!!");
         }
     }
 }

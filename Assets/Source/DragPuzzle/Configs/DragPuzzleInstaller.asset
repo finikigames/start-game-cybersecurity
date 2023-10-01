@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e401e7e6d37d4fce941653b288aee4e1, type: 3}
+  m_Name: DragPuzzleInstaller
+  m_EditorClassIdentifier: 
+  PuzzleGameConfig:
+    DropDistance: 10
+    Sprites:
+    - {fileID: -1283670514, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: -1476814778, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 21495995, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 1307147314, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 1342581893, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 877238934, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: -1910071675, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 915247960, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
+    - {fileID: 318343245, guid: 720b3b24c518a33439c466a9a2197d8e, type: 3}
