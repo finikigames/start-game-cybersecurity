@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce654a5ddfd84cb9aba6d8df84e15ecf, type: 3}
+  m_Name: PlumberInstaller
+  m_EditorClassIdentifier: 
+  PlumberConfig:
+    PipeDatas:
+    - PipeView: {fileID: 21300000, guid: 40eb542ee87a7d44784afb9f74723164, type: 3}
+      Type: 1
+    - PipeView: {fileID: 21300000, guid: 54b576512db499b41bbe6da0f882c82a, type: 3}
+      Type: 2
+    - PipeView: {fileID: 21300000, guid: 8cfb93d3cf4694e4c95cdd07b79c80f1, type: 3}
+      Type: 3
+    - PipeView: {fileID: 21300000, guid: 906361534b3f35f47a9e53a02fa0b128, type: 3}
+      Type: 4
+    _PipeTypes: 01000000020000000300000004000000010000000100000003000000020000000200000001000000010000000400000003000000010000000400000003000000010000000400000002000000040000000100000004000000030000000300000004000000040000000200000004000000020000000400000004000000020000000300000002000000040000000200000004000000020000000200000002000000010000000400000001000000030000000400000002000000020000000200000001000000
