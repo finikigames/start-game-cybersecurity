@@ -1,5 +1,6 @@
 ﻿using System;
 using Global.Flow.Condition;
+using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
@@ -24,7 +25,12 @@ namespace Global.UI.InteractableView {
         }
 
         public override void Initialize(string id) {
-            
+            var data = Config.Data[id];
+
+            var rectTransform = (RectTransform)Button.transform;
+
+            rectTransform.anchoredPosition = data.ButtonPosition;
+            rectTransform.sizeDelta = data.ButtonSize;
         }
 
         private void OnDisable() {

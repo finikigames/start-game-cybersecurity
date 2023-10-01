@@ -239,4 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 3410031433365223275}
   Config:
-    _raw: []
+    _raw:
+    - Id: 1
+      ButtonPosition: {x: 0, y: 0}
+      ButtonSize: {x: 200, y: 200}
