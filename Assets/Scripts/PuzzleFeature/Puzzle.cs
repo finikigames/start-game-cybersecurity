@@ -1,10 +1,12 @@
 using System;
+using PuzzleFeature.Configs;
+using PuzzleFeature.UI;
 using UnityEngine;
 
 namespace PuzzleFeature {
     public class Puzzle : MonoBehaviour {
         [SerializeField] private PuzzlePiece[] _pieces;
-        [SerializeField] private GamePuzzle _puzzles;
+        [SerializeField] private GamePuzzleConfig puzzlesConfig;
         [SerializeField] private Transform _winBlock;
         [SerializeField] private Transform _selectedFrame;
 
@@ -14,7 +16,7 @@ namespace PuzzleFeature {
         private int[] _checkPattern = new []{1,-1,3,-3};
 
         private void Awake() {
-            SetNewPuzzle(_puzzles);
+            SetNewPuzzle(puzzlesConfig);
             _winBlock.gameObject.SetActive(false);
             _selectedFrame.gameObject.SetActive(false);
 
@@ -29,10 +31,10 @@ namespace PuzzleFeature {
             if (_pieces.Length == 0)
                 return;
             
-            _puzzles.PrepareIcons();
+            puzzlesConfig.PrepareIcons();
             
             foreach (var piece in _pieces) {
-                _puzzles.PickPuzzle(piece);
+                puzzlesConfig.PickPuzzle(piece);
             }
         }
 
@@ -40,7 +42,7 @@ namespace PuzzleFeature {
             var i = 0;
             var counter = 0;
             foreach (var v in _pieces) {
-                if (v.Piece == _puzzles.Sprites[i++]) {
+                if (v.Piece == puzzlesConfig.Sprites[i++]) {
                     counter++;
                 }
             }
@@ -74,9 +76,9 @@ namespace PuzzleFeature {
             
             if (!canChange) return;
 
-            int i = Array.IndexOf(_puzzles.Sprites, piece.Piece);
+            int i = Array.IndexOf(puzzlesConfig.Sprites, piece.Piece);
             piece.SetIcon(_firstPiece.Piece);
-            _firstPiece.SetIcon(_puzzles.Sprites[i]);
+            _firstPiece.SetIcon(puzzlesConfig.Sprites[i]);
             
             _selectedFrame.gameObject.SetActive(false);
             _firstPiece = null;
@@ -84,8 +86,8 @@ namespace PuzzleFeature {
             CheckWin();
         }
 
-        private void SetNewPuzzle(GamePuzzle puzzle) {
-            _puzzles = puzzle;
+        private void SetNewPuzzle(GamePuzzleConfig puzzleConfig) {
+            puzzlesConfig = puzzleConfig;
             StartPuzzle();
         }
     }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PuzzleFeature {
+namespace PuzzleFeature.UI {
     public class PuzzlePiece : MonoBehaviour {
         [SerializeField] private Button _pieceButton;
         

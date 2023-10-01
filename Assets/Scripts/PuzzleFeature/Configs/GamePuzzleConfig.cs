@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using PuzzleFeature.UI;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace PuzzleFeature {
+namespace PuzzleFeature.Configs {
     [CreateAssetMenu(menuName = "Content/GamePuzzle")]
-    public class GamePuzzle : ScriptableObject {
+    public class GamePuzzleConfig : ScriptableObject {
         [SerializeField] private Sprite[] sprites;
 
         private List<Sprite> _spritesList = new();
