@@ -378,6 +378,8 @@ MonoBehaviour:
     Window: {fileID: 1535912062}
   - Id: static_window
     Window: {fileID: 4409471957257393264}
+  - Id: interactable_window
+    Window: {fileID: 8967284213565587731}
 --- !u!114 &1866066629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217b9b26e58b4e06a1718aed6524c30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneSettings: {fileID: 1866066628}
 --- !u!1001 &693274802710764221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 3861329303658493712, guid: 4bf5d289f50bdeb4cb54ad2a790b5f3b, type: 3}
       propertyPath: m_Name
       value: DialogWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861329303658493712, guid: 4bf5d289f50bdeb4cb54ad2a790b5f3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4330211141951096445, guid: 4bf5d289f50bdeb4cb54ad2a790b5f3b, type: 3}
       propertyPath: m_Camera
@@ -622,6 +629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaticWindow
       objectReference: {fileID: 0}
+    - target: {fileID: 4387081615690208086, guid: f40e11ec4ab645f46891ed14ebd12905, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8083760712450058117, guid: f40e11ec4ab645f46891ed14ebd12905, type: 3}
       propertyPath: m_Camera
       value: 
@@ -658,6 +669,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6284513669248325187, guid: c10aa82639ee5244e952bd03730ae852, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7738160014024943389, guid: c10aa82639ee5244e952bd03730ae852, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -746,8 +761,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableWindow
       objectReference: {fileID: 0}
+    - target: {fileID: 8012328214803522068, guid: c10aa82639ee5244e952bd03730ae852, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10aa82639ee5244e952bd03730ae852, type: 3}
+--- !u!114 &8967284213565587731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3424837958278268789, guid: c10aa82639ee5244e952bd03730ae852, type: 3}
+  m_PrefabInstance: {fileID: 8967284213565587730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a7101a3bbd4fe4b89cfc487ae67833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

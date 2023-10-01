@@ -6,7 +6,7 @@ namespace Global.UI.StaticView {
         
         public StaticConfig Config;
         
-        protected override void Initialize(string id) {
+        public override void Initialize(string id) {
             
         }
     }

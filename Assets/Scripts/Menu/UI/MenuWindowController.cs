@@ -13,7 +13,7 @@ namespace Menu.UI {
         }
 
         private void LoadMainScene() {
-            SceneManager.LoadScene("PasswordMiniGame");
+            SceneManager.LoadScene("Main");
         }
     }
 }

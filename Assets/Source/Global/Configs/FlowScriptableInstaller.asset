@@ -28,3 +28,12 @@ MonoBehaviour:
         DataId: 2
       Condition:
       - screen_click
+    - Data:
+      - Window: static_window
+        DataId: 2
+      - Window: dialog_window
+        DataId: 2
+      - Window: interactable_window
+        DataId: 1
+      Condition:
+      - button_interaction

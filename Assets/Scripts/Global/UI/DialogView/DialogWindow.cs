@@ -7,7 +7,7 @@ namespace Global.UI.DialogView {
         
         public DialogConfig Config;
         
-        protected override void Initialize(string id) {
+        public override void Initialize(string id) {
             
         }
     }
