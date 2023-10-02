@@ -117,6 +117,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 6027052199443593056}
+  ButtonText: {fileID: 7182328245694950694}
+  Config:
+    _raw:
+    - Id: 1
+      Color: {r: 1, g: 0.84705883, b: 0, a: 1}
+    - Id: 2
+      Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3312211757692663750
 GameObject:
   m_ObjectHideFlags: 0

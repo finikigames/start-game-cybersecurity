@@ -268,3 +268,7 @@ MonoBehaviour:
       ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
       ButtonPosition: {x: -52.06, y: 290.1}
       ButtonSize: {x: 863.79, y: 178.41}
+    - Id: 15_message_listen_click
+      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+      ButtonPosition: {x: -349, y: 5}
+      ButtonSize: {x: 100, y: 100}

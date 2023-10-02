@@ -53,6 +53,7 @@ SpriteAtlas:
     - 7ea5330020acf0b46afc677f4fa7c4c7: 21300000
     - 1df0cf32120622e42bb527d93e9ef3e7: 21300000
     - 5e6330736d4cc314997bf9b0575e63ef: 21300000
+    - 6c4ebca4fce705f42839037f20c276e3: 21300000
     - 336c3bd9407dba645a8603da4a9b331d: 21300000
     - e8cc1b3a9f52be64888bcc1dd2af5a70: 21300000
     - 0f90d49af53ccb046b03ca4077607f36: 21300000
@@ -67,6 +68,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7ea5330020acf0b46afc677f4fa7c4c7, type: 3}
   - {fileID: 21300000, guid: 1df0cf32120622e42bb527d93e9ef3e7, type: 3}
   - {fileID: 21300000, guid: 5e6330736d4cc314997bf9b0575e63ef, type: 3}
+  - {fileID: 21300000, guid: 6c4ebca4fce705f42839037f20c276e3, type: 3}
   - {fileID: 21300000, guid: 336c3bd9407dba645a8603da4a9b331d, type: 3}
   - {fileID: 21300000, guid: e8cc1b3a9f52be64888bcc1dd2af5a70, type: 3}
   - {fileID: 21300000, guid: 0f90d49af53ccb046b03ca4077607f36, type: 3}
@@ -80,6 +82,7 @@ SpriteAtlas:
   - authorization
   - Mini3
   - MainVK
+  - Dialog No voice
   - Dialog
   - AlbumsList
   - Mini1
