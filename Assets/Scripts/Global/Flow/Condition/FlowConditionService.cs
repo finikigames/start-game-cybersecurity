@@ -5,11 +5,9 @@ using Zenject;
 namespace Global.Flow.Condition {
     public class FlowConditionService : IInitializable,
                                         ITickable {
-        private Dictionary<string, BaseCondition> _conditions;
+        private Dictionary<string, BaseCondition> _conditions = new();
 
         public void Initialize() {
-            _conditions = new Dictionary<string, BaseCondition>();
-            
             RegisterCondition("screen_click", new ScreenClickCondition());
         }
 

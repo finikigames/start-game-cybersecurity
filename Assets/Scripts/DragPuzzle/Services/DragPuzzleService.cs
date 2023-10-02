@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using DragPuzzle.Configs;
+using DragPuzzle.Flow;
 using DragPuzzle.UI;
+using Global.Flow.Condition;
 using UnityEngine;
 using Zenject;
 
@@ -9,15 +11,20 @@ namespace DragPuzzle.Services {
     public class DragPuzzleService : IInitializable {
         private readonly DragPuzzleGameConfig _gameConfig;
         private readonly DragPuzzleField _puzzleField;
-        
-        public Action OnDragPuzzleWin { get; set; }
+        private readonly FlowConditionService _flowConditionService;
+
+        private DragGameWinCondition _condition;
 
         public DragPuzzleService(DragPuzzleGameConfig gameConfig,
-                                 DragPuzzleField puzzleField) {
+                                 DragPuzzleField puzzleField,
+                                 FlowConditionService flowConditionService) {
             _gameConfig = gameConfig;
             _puzzleField = puzzleField;
+            _flowConditionService = flowConditionService;
         } 
         public void Initialize() {
+            _condition = new DragGameWinCondition();
+            _flowConditionService.RegisterCondition("drag_win_condition", _condition);
             var sprites = _gameConfig.Sprites;
             
             _puzzleField.InitializeFieldView(sprites);
@@ -33,9 +40,8 @@ namespace DragPuzzle.Services {
             
             _puzzleField.SetPuzzleLock(id);
             if (!_puzzleField.CheckWin()) return;
-            
-            OnDragPuzzleWin?.Invoke();
-            Debug.Log("You win drag puzzle game!!!");
+
+            _condition.Ready = true;
         }
     }
 }

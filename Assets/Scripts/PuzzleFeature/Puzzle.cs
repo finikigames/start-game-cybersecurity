@@ -1,21 +1,33 @@
 using System;
+using Global.Flow.Condition;
 using PuzzleFeature.Configs;
+using PuzzleFeature.Flow;
 using PuzzleFeature.UI;
 using UnityEngine;
+using Zenject;
 
 namespace PuzzleFeature {
-    public class Puzzle : MonoBehaviour {
+    public class Puzzle : MonoBehaviour, IInitializable {
         [SerializeField] private PuzzlePiece[] _pieces;
         [SerializeField] private GamePuzzleConfig puzzlesConfig;
         [SerializeField] private Transform _winBlock;
         [SerializeField] private Transform _selectedFrame;
 
-        public Action OnPuzzleWin;
-
         private PuzzlePiece _firstPiece;
         private int[] _checkPattern = new []{1,-1,3,-3};
 
+        private FlowConditionService _flowConditionService;
+        private SwapGameWinCondition _swapGameWinCondition;
+
+        [Inject]
+        public void Constructor(FlowConditionService flowConditionService) {
+            _flowConditionService = flowConditionService;
+        }
+        
         private void Awake() {
+            _swapGameWinCondition = new SwapGameWinCondition();
+            _flowConditionService.RegisterCondition("swap_win_condition", _swapGameWinCondition);
+            
             SetNewPuzzle(puzzlesConfig);
             _winBlock.gameObject.SetActive(false);
             _selectedFrame.gameObject.SetActive(false);
@@ -25,6 +37,11 @@ namespace PuzzleFeature {
                 piece.Initialize(ChangePuzzleSprite);
                 piece.Index = index;
             }
+        }
+
+        public void Initialize() {
+            _swapGameWinCondition = new SwapGameWinCondition();
+            _flowConditionService.RegisterCondition("swap_win_condition", _swapGameWinCondition);
         }
 
         private void StartPuzzle() {
@@ -49,8 +66,8 @@ namespace PuzzleFeature {
 
             if (counter != _pieces.Length) return;
             
-            _winBlock.gameObject.SetActive(true);
-            OnPuzzleWin?.Invoke();
+            //_winBlock.gameObject.SetActive(true);
+            _swapGameWinCondition.Ready = true;
         }
 
         private void ChangePuzzleSprite(PuzzlePiece piece) {

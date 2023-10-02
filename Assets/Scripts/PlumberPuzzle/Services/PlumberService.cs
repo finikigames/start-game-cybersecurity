@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Global.Flow.Condition;
 using PlumberPuzzle.Config;
 using PlumberPuzzle.Data;
+using PlumberPuzzle.Flow;
 using PlumberPuzzle.UI;
 using UnityEngine;
 using Zenject;
@@ -10,21 +12,25 @@ namespace PlumberPuzzle.Services {
     public class PlumberService : IInitializable {
         private readonly PlumberConfig _plumberConfig;
         private readonly PlumberField _field;
+        private readonly FlowConditionService _flowConditionService;
 
         private List<int> _connects = new();
         private List<int> _neighbors = new();
 
         private List<int> _defaultNeighbors = new() { 10, -10, 1, -1};
-        
-        public Action OnPlumberWin { get; set; }
+        private PlumberGameWinCondition _condition;
 
         public PlumberService(PlumberConfig plumberConfig,
-                              PlumberField field) {
+                              PlumberField field,
+                              FlowConditionService flowConditionService) {
             _plumberConfig = plumberConfig;
             _field = field;
+            _flowConditionService = flowConditionService;
         }
         
         public void Initialize() {
+            _condition = new PlumberGameWinCondition();
+            _flowConditionService.RegisterCondition("plumber_game_win", _condition);
             _plumberConfig.Initialize();
 
             var allPipes = new PipeView[_plumberConfig._PipeTypes.Length];
@@ -246,8 +252,7 @@ namespace PlumberPuzzle.Services {
                 if (!data.ConnectedCells.Contains(_plumberConfig.WinConnections[index + 1])) return;
             }
 
-            Debug.Log("Plumber game WIN!!!");
-            OnPlumberWin?.Invoke();
+            _condition.Ready = true;
         }
     }
 }
