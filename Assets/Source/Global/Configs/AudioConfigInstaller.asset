@@ -24,3 +24,7 @@ MonoBehaviour:
       Clip: {fileID: 8300000, guid: 9344642b377a6ec45b37441001e0227c, type: 3}
     - Id: directed
       Clip: {fileID: 8300000, guid: a464c6eabf0898849b992af385d2656d, type: 3}
+    - Id: romantic
+      Clip: {fileID: 8300000, guid: 55c5ab11ca195fe4083ec266aba2e6e3, type: 3}
+    - Id: sound_action
+      Clip: {fileID: 8300000, guid: b99ad099b05827b4eb52bceb859df583, type: 3}

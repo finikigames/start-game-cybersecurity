@@ -28,6 +28,14 @@ namespace Global.Flow {
             _lastStep = _config.MainFlowSteps[_currentIndex];
 
             foreach (var data in _lastStep.Data) {
+                if (!string.IsNullOrEmpty(_lastStep.AudioId)) {
+                    if (_lastStep.MainSound) {
+                        _audioService.SetGlobalSource(_lastStep.AudioId); 
+                    }
+                    else {
+                        _audioService.SetAdditionalSource(_lastStep.AudioId);
+                    }
+                }
                 InitializeStep(data);
             }
         }

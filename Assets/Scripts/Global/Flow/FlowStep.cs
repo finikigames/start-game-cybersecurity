@@ -8,6 +8,7 @@ namespace Global.Flow {
 
         public bool MainSound;
         public string AudioId;
+        public bool NotLoop;
         public FlowData[] Data;
         public List<string> Condition;
     }
