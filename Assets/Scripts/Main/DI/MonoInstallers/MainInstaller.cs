@@ -1,4 +1,5 @@
 ﻿using Global.Flow;
+using Global.Flow.Condition;
 using Main.Services;
 using Zenject;
 
@@ -14,9 +15,15 @@ namespace Main.DI.MonoInstallers {
             Container
                 .BindInterfacesAndSelfTo<FlowService>()
                 .AsSingle();
+
             
             Container
-                .BindInterfacesAndSelfTo<MainService>()
+                .BindInterfacesAndSelfTo<FlowConditionService>()
+                .AsSingle();
+            
+            
+            Container
+                .BindInterfacesAndSelfTo<LetterGeneratorService>()
                 .AsSingle();
         }
     }

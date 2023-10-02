@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 1ee7acd2100d1ef49ae69266df4b2b66
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Advent Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 892ea5f0628343f4aa74da00681147c6, type: 3}
+  - {fileID: 12800000, guid: 45c2d61c2756f6048933780d6115b9c1, type: 3}
+  - {fileID: 12800000, guid: ba16c7c406effff468acd765dcc83d18, type: 3}
+  - {fileID: 12800000, guid: 9d9488d328d5f0a46aabc3d92a5a398d, type: 3}
+  - {fileID: 12800000, guid: 5794b47c5dc414c4fa5e61761ab5acc9, type: 3}
+  - {fileID: 12800000, guid: 89d3a49f931e8a640918abf8a35c3726, type: 3}
+  - {fileID: 12800000, guid: 013a0d1eb9b6cdc4a92e812d85288193, type: 3}
+  - {fileID: 12800000, guid: 0d25a752096db384abfac9ebc04b9eda, type: 3}
+  - {fileID: 12800000, guid: 6261315c1f8cbfd48bcd067a00f885e1, type: 3}
+  - {fileID: 12800000, guid: b1006373d1977ed4085ae71719ca5290, type: 3}
+  - {fileID: 12800000, guid: 38c4549099c53714993138a35b4f9027, type: 3}
+  - {fileID: 12800000, guid: 1c2f88955324ca94ab97b1798e9688c7, type: 3}
+  - {fileID: 12800000, guid: 3acd3ea3436304d48a8ad196cbc5dcd1, type: 3}
+  - {fileID: 12800000, guid: 30441606ae727f344b78e13672770354, type: 3}
+  - {fileID: 12800000, guid: 0807711733b35b3408ace3713dfc50d1, type: 3}
+  - {fileID: 12800000, guid: 406bc3440b8d15143be5606d108fdc93, type: 3}
+  - {fileID: 12800000, guid: 6d652e81665db694db48a459a8e39331, type: 3}
+  - {fileID: 12800000, guid: e410f4c5fe6155d43bee31fcfe6759aa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,8 +48,8 @@ namespace Global.Flow {
         private void InitializeStep(FlowData data) {
             var window = _sceneSettings.Windows[data.Window];
 
-            window.Initialize(data.DataId);
             window.Show();
+            window.Initialize(data.DataId);
         }
 
         private void DisposeStep(FlowStep step) {

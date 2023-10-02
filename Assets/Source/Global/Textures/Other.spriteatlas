@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Other
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3f59a23654059114f8eb2b3f9b952bfb, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 535af590613307a4a884265bfece3c4f: 21300000
+    - 8d0386d01f651ce48b06ed752a8d2f4a: 21300000
+    - 5ea930829503954478b24b6c880a509c: 21300000
+    - c3856925a76cf68449f85d99789d48e4: 21300000
+    - 184071d9c97846742a96c394655d5609: 21300000
+    - c6dc5b0bd9fe3cb4e90f9770bac8f40c: 21300000
+    - b6d9c1dbc98b4924fbabc3bbe91d7684: 21300000
+    - 694ee84e50d64f547a17e18a55128bae: 21300000
+    - 4d0c0e9e8caf53c438e819148045c0cf: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 535af590613307a4a884265bfece3c4f, type: 3}
+  - {fileID: 21300000, guid: 8d0386d01f651ce48b06ed752a8d2f4a, type: 3}
+  - {fileID: 21300000, guid: 5ea930829503954478b24b6c880a509c, type: 3}
+  - {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+  - {fileID: 21300000, guid: 184071d9c97846742a96c394655d5609, type: 3}
+  - {fileID: 21300000, guid: c6dc5b0bd9fe3cb4e90f9770bac8f40c, type: 3}
+  - {fileID: 21300000, guid: b6d9c1dbc98b4924fbabc3bbe91d7684, type: 3}
+  - {fileID: 21300000, guid: 694ee84e50d64f547a17e18a55128bae, type: 3}
+  - {fileID: 21300000, guid: 4d0c0e9e8caf53c438e819148045c0cf, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Button On hover
+  - Gradient
+  - Icon_Chevron
+  - Highlight
+  - Icon_Vk
+  - Icon_coursor
+  - Button Default
+  - logo
+  - Button On click
+  m_RenderDataMap: {}
+  m_Tag: Other
+  m_IsVariant: 0
