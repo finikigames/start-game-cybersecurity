@@ -1,4 +1,5 @@
-﻿using Global.Flow.Condition;
+﻿using System;
+using Global.Flow.Condition;
 using UnityEngine.UI;
 using Zenject;
 
@@ -21,6 +22,10 @@ namespace Global.UI.ContinueView {
         }
         
         public override void Initialize(string id) {
+        }
+
+        private void OnDisable() {
+            _continueButtonCondition.Ready = false;
         }
     }
 }

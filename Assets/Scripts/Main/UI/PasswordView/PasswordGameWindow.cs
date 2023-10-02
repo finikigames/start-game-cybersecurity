@@ -4,6 +4,7 @@ using Global.Flow.Condition;
 using Global.UI;
 using Main.Configs;
 using Main.Services;
+using TMPro;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -13,6 +14,8 @@ namespace Main.UI.PasswordView {
         public List<RectTransform> SpawnPoints;
         public RectTransform Parent;
         public RectTransform RemovePoint;
+
+        public TextMeshProUGUI PasswordText;
         
         private LetterGeneratorService _letterGeneratorService;
         private PasswordMiniGameConfig _config;
@@ -98,6 +101,8 @@ namespace Main.UI.PasswordView {
                 _index++;
                 _pressed = false;
                 _mainView = null;
+
+                PasswordText.text = _passwordCopy.Substring(0, _index);
             }
             
             if (_spawnTime < _config.SpawnDelta) return;
