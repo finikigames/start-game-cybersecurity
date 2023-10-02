@@ -1,5 +1,6 @@
 ﻿using System;
 using Global.Flow.Condition;
+using TMPro;
 using UnityEngine.UI;
 using Zenject;
 
@@ -8,6 +9,9 @@ namespace Global.UI.ContinueView {
         private FlowConditionService _conditionService;
         
         public Button Button;
+        public TextMeshProUGUI ButtonText;
+        public ContinueConfig Config;
+        
         private ContinueButtonCondition _continueButtonCondition;
 
         [Inject]
@@ -22,6 +26,9 @@ namespace Global.UI.ContinueView {
         }
         
         public override void Initialize(string id) {
+            var data = Config.Data[id];
+
+            ButtonText.color = data.Color;
         }
 
         private void OnDisable() {

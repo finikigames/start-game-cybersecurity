@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 9182049266459552408}
   - component: {fileID: 6938695910848577832}
   - component: {fileID: 2079464917100916028}
-  - component: {fileID: 7242466570595551202}
   - component: {fileID: 3398240980734137133}
   m_Layer: 0
   m_Name: VoiceMessageWindow
@@ -352,7 +351,7 @@ RectTransform:
   - {fileID: 7516634705989817014}
   - {fileID: 868433533503698008}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -368,7 +367,7 @@ Canvas:
   m_GameObject: {fileID: 5228750913250726172}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -422,23 +421,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7242466570595551202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228750913250726172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers: []
-  _installerPrefabs: []
-  _autoRun: 1
-  _kernel: {fileID: 0}
 --- !u!114 &3398240980734137133
 MonoBehaviour:
   m_ObjectHideFlags: 0

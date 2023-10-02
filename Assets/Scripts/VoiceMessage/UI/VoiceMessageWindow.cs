@@ -9,12 +9,13 @@ namespace VoiceMessage.UI {
     public class VoiceMessageWindow : BaseWindow, ITickable {
         [SerializeField] private Slider _voice;
         
-        private readonly AudioService _audioService;
+        private AudioService _audioService;
         private bool _ready;
         private float _startedTime;
         private float _lenght;
 
-        public VoiceMessageWindow(AudioService audioService) {
+        [Inject]
+        private void Construct(AudioService audioService) {
             _audioService = audioService;
         }
         

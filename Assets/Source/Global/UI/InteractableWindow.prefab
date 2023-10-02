@@ -252,11 +252,23 @@ MonoBehaviour:
       ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
       ButtonPosition: {x: -629.7596, y: 200}
       ButtonSize: {x: 245.51, y: 80}
-    - Id: 4
-      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
-      ButtonPosition: {x: 0, y: 37.2}
-      ButtonSize: {x: 320, y: 80}
     - Id: 7_step_login
       ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
-      ButtonPosition: {x: 0, y: 37.2}
-      ButtonSize: {x: 320, y: 80}
+      ButtonPosition: {x: 0, y: -351}
+      ButtonSize: {x: 470, y: 110}
+    - Id: 10-2_hidden_click
+      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+      ButtonPosition: {x: 417.7, y: -122.2}
+      ButtonSize: {x: 623.04, y: 338.43}
+    - Id: 13-2_messages_click
+      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+      ButtonPosition: {x: -615.77, y: 330.31}
+      ButtonSize: {x: 247.71, y: 77.89}
+    - Id: 14_lp_message_click
+      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+      ButtonPosition: {x: -52.06, y: 290.1}
+      ButtonSize: {x: 863.79, y: 178.41}
+    - Id: 15_message_listen_click
+      ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
+      ButtonPosition: {x: -349, y: 5}
+      ButtonSize: {x: 100, y: 100}
