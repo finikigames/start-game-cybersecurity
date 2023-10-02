@@ -16,3 +16,5 @@ MonoBehaviour:
     AudioData:
     - Id: 1
       Clip: {fileID: 8300000, guid: c35cfcc2ae2d658449d34ca7edaa7bf3, type: 3}
+    - Id: click_sound
+      Clip: {fileID: 8300000, guid: 1fbdd6a9bc6bdfa4d85d2d4d590e97dc, type: 3}

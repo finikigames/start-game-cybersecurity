@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DragPuzzleInstaller
   m_EditorClassIdentifier: 
   PuzzleGameConfig:
-    DropDistance: 10
+    DropDistance: 20
     Sprites:
     - {fileID: 21300000, guid: e3673290ec9ee654badbdf1d361dd61e, type: 3}
     - {fileID: 21300000, guid: b66ee7ca68a8f5144ae810af013d47b4, type: 3}
