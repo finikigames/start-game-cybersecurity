@@ -18,3 +18,5 @@ MonoBehaviour:
       Clip: {fileID: 8300000, guid: c35cfcc2ae2d658449d34ca7edaa7bf3, type: 3}
     - Id: click_sound
       Clip: {fileID: 8300000, guid: 1fbdd6a9bc6bdfa4d85d2d4d590e97dc, type: 3}
+    - Id: voice_message
+      Clip: {fileID: 8300000, guid: 8b91246dfc4cdb34a942e62cacec1c22, type: 3}
