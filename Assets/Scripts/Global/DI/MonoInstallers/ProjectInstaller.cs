@@ -1,5 +1,4 @@
-﻿using Global.Flow.Condition;
-using Zenject;
+﻿using Zenject;
 
 namespace Global.DI.MonoInstallers {
     public class ProjectInstaller : MonoInstaller {
