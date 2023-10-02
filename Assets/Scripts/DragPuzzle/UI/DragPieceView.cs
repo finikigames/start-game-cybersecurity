@@ -15,6 +15,7 @@ namespace DragPuzzle.UI {
         public void Initialize(Sprite pieceSprite, string index) {
             _piece.sprite = pieceSprite;
             _piece.color = new Color(0.75f, 0.75f, 0.75f, 0.92f);
+            _piece.SetNativeSize();
             _index = index;
             IsLocked = false;
             //transform.localPosition = startPosition;

@@ -16,15 +16,15 @@ namespace DragPuzzle.Services {
         private DragGameWinCondition _condition;
 
         public DragPuzzleService(DragPuzzleGameConfig gameConfig,
-                                 DragPuzzleField puzzleField,
-                                 FlowConditionService flowConditionService) {
+                                 DragPuzzleField puzzleField
+                                 ){//FlowConditionService flowConditionService) {
             _gameConfig = gameConfig;
             _puzzleField = puzzleField;
-            _flowConditionService = flowConditionService;
+            //_flowConditionService = flowConditionService;
         } 
         public void Initialize() {
             _condition = new DragGameWinCondition();
-            _flowConditionService.RegisterCondition("drag_win_condition", _condition);
+            //_flowConditionService.RegisterCondition("drag_win_condition", _condition);
             var sprites = _gameConfig.Sprites;
             
             _puzzleField.InitializeFieldView(sprites);

@@ -7,7 +7,7 @@ namespace DragPuzzle.UI {
 
         public void Initialize(Sprite sprite) {
             _puzzleIcon.sprite = sprite;
-            _puzzleIcon.color = new Color(1f, 1f, 1f, 0.4f);
+            _puzzleIcon.color = new Color(1f, 1f, 1f, 0.3f);
         }
     }
 }
