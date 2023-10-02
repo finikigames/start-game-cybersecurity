@@ -81,7 +81,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -134,6 +134,21 @@ MonoBehaviour:
       Description: "\u042D\u043A\u0440\u0430\u043D \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
         \u0441\u0442\u043E\u043B\u0430"
       Bg: {fileID: 21300000, guid: 8501fb0f58ebcc74ca99a4494280affe, type: 3}
+    - Id: 5
+      Description: "\u042D\u043A\u0440\u0430\u043D \u0432\u0445\u043E\u0434\u0430
+        \u0432 VK"
+      Bg: {fileID: 21300000, guid: 7ea5330020acf0b46afc677f4fa7c4c7, type: 3}
+    - Id: 6
+      Description: "\u042D\u043A\u0440\u0430\u043D \u0434\u043B\u044F \u043C\u0438\u043D\u0438
+        \u0438\u0433\u0440\u044B \u0441 \u043F\u0430\u0440\u043E\u043B\u0435\u043C"
+      Bg: {fileID: 21300000, guid: 0f90d49af53ccb046b03ca4077607f36, type: 3}
+    - Id: 7
+      Description: "\u042D\u043A\u0440\u0430\u043D \u0433\u043B\u0430\u0432\u043D\u043E\u0439
+        \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B \u0432\u043A"
+      Bg: {fileID: 21300000, guid: 5e6330736d4cc314997bf9b0575e63ef, type: 3}
+    - Id: 8
+      Description: "\u042D\u043A\u0440\u0430\u043D \u0444\u043E\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0439"
+      Bg: {fileID: 21300000, guid: e8cc1b3a9f52be64888bcc1dd2af5a70, type: 3}
 --- !u!1 &8331494551227145841
 GameObject:
   m_ObjectHideFlags: 0
