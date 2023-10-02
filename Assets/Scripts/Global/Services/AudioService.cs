@@ -20,13 +20,30 @@ namespace Global.Services {
         public void SetGlobalSource(string id) {
             var clip = _audioConfig.GetClip(id);
             _audioSettings.GlobalSource.clip = clip;
+            
             _audioSettings.GlobalSource.Play();
         }
+
+        public float GetAdditionalPercent() {
+            var time = _audioSettings.AdditionalSource.time;
+
+            var clipTime = _audioSettings.AdditionalSource.clip.length;
+
+            return time / clipTime;
+        }
         
-        public void SetAdditionalSource(string id) {
+        public void SetAdditionalSource(string id, bool muteMain = false) {
             var clip = _audioConfig.GetClip(id);
             _audioSettings.AdditionalSource.clip = clip;
             _audioSettings.AdditionalSource.Play();
+
+            if (muteMain) {
+                _audioSettings.GlobalSource.volume = 0.1f;
+            }
+        }
+
+        public void SetMainSourceVolume(float volume) {
+            _audioSettings.GlobalSource.volume = volume;
         }
 
         public void StopAdditionalSource() {

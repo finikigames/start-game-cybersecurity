@@ -6,13 +6,11 @@ using UnityEngine.UI;
 using Zenject;
 
 namespace VoiceMessage.UI {
-    public class VoiceMessageWindow : BaseWindow, ITickable {
+    public class VoiceMessageWindow : BaseWindow {
         [SerializeField] private Slider _voice;
         
         private AudioService _audioService;
         private bool _ready;
-        private float _startedTime;
-        private float _lenght;
 
         [Inject]
         private void Construct(AudioService audioService) {
@@ -20,27 +18,21 @@ namespace VoiceMessage.UI {
         }
         
         public override void Initialize(string id) {
-            _lenght = _audioService.GetClipLenght("voice_message");
-            _voice.minValue = 0;
-            _voice.maxValue = _lenght;
-            _voice.value = 0f;
-            _startedTime = (float)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-
             _audioService.SetAdditionalSource("voice_message");
+            _audioService.SetMainSourceVolume(0.1f);
             _ready = true;
         }
 
-        public void Tick() {
+        public void Update() {
             if (!_ready) return;
-            
-            var nowTime = (float)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-            var passedTime = nowTime - _startedTime;
-            if (passedTime > _lenght) {
-                _ready = false;
-                return;
-            }
 
-            _voice.value = passedTime;
+            var percent = _audioService.GetAdditionalPercent();
+            _voice.value = percent;
+        }
+
+        private void OnDisable() {
+            _audioService.StopAdditionalSource();
+            _audioService.SetMainSourceVolume(1f);
         }
     }
 }

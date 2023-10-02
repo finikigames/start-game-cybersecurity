@@ -20,3 +20,7 @@ MonoBehaviour:
       Clip: {fileID: 8300000, guid: 1fbdd6a9bc6bdfa4d85d2d4d590e97dc, type: 3}
     - Id: voice_message
       Clip: {fileID: 8300000, guid: 8b91246dfc4cdb34a942e62cacec1c22, type: 3}
+    - Id: door_knock
+      Clip: {fileID: 8300000, guid: 9344642b377a6ec45b37441001e0227c, type: 3}
+    - Id: directed
+      Clip: {fileID: 8300000, guid: a464c6eabf0898849b992af385d2656d, type: 3}

@@ -111,7 +111,7 @@ RectTransform:
   - {fileID: 8488608803782779220}
   - {fileID: 8715551194368445732}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -199,6 +199,8 @@ MonoBehaviour:
     - Id: 1
       Text: "\u041A\u0430\u043A\u043E\u0435 \u0442\u043E \u0432\u0440\u0435\u043C\u044F
         \u0441\u043F\u0443\u0441\u0442\u044F..."
+    - Id: 2
+      Text: Directed by<br>ROBERT B.WEIDE
 --- !u!1 &8378179565482440688
 GameObject:
   m_ObjectHideFlags: 0

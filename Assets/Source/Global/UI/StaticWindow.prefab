@@ -170,6 +170,12 @@ MonoBehaviour:
     - Id: 13-lp_messages_no_message
       Description: "\u042D\u043A\u0440\u0430\u043D \u0431\u0435\u0437 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F"
       Bg: {fileID: 21300000, guid: 6c4ebca4fce705f42839037f20c276e3, type: 3}
+    - Id: 14-upset_boy
+      Description: "\u0427\u0443\u0432\u0430\u043A \u0442\u0443\u043F\u0430\u043D\u0443\u043B"
+      Bg: {fileID: 21300000, guid: af04490a70a8f8d41a3656db1e6fdf25, type: 3}
+    - Id: 15-agents
+      Description: "\u0410\u0433\u0435\u043D\u0442\u044B \u0437\u0430 \u0434\u0432\u0435\u0440\u044C\u044E"
+      Bg: {fileID: 21300000, guid: f8127bb5cbe94e543bb4dc3617f93a97, type: 3}
 --- !u!1 &8331494551227145841
 GameObject:
   m_ObjectHideFlags: 0

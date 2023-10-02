@@ -1,4 +1,6 @@
 ﻿using Global.Flow.Condition;
+using Global.Services;
+using UnityEngine;
 using Zenject;
 
 namespace Global.Flow {
@@ -7,16 +9,19 @@ namespace Global.Flow {
         private readonly FlowSceneSettings _sceneSettings;
         private readonly MainFlowConfig _config;
         private readonly FlowConditionService _conditionService;
+        private readonly AudioService _audioService;
 
         private int _currentIndex;
         private FlowStep _lastStep;
 
         public FlowService(FlowSceneSettings sceneSettings,
                            MainFlowConfig config, 
-                           FlowConditionService conditionService) {
+                           FlowConditionService conditionService,
+                           AudioService audioService) {
             _sceneSettings = sceneSettings;
             _config = config;
             _conditionService = conditionService;
+            _audioService = audioService;
         }
 
         public void Initialize() {
@@ -41,6 +46,14 @@ namespace Global.Flow {
             _lastStep = _config.MainFlowSteps[_currentIndex];
 
             foreach (var data in _lastStep.Data) {
+                if (!string.IsNullOrEmpty(_lastStep.AudioId)) {
+                    if (_lastStep.MainSound) {
+                       _audioService.SetGlobalSource(_lastStep.AudioId); 
+                    }
+                    else {
+                        _audioService.SetAdditionalSource(_lastStep.AudioId);
+                    }
+                }
                 InitializeStep(data);
             }
         }
