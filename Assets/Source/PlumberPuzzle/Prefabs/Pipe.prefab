@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.19693142, b: 0.4245283, a: 1}
+  m_Color: {r: 0.4362763, g: 0.56623214, b: 0.7169812, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -213,3 +213,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pipeButton: {fileID: 2830891735530507451}
   _pipeIcon: {fileID: 7097732959219342019}
+  Index: 0

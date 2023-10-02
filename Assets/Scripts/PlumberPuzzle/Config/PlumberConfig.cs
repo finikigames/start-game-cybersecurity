@@ -9,10 +9,8 @@ namespace PlumberPuzzle.Config {
         public VisualPipeData[] PipeDatas;
         public PipeType[] _PipeTypes;
 
-        public int StartPos;
-        public int EndPos;
+        public int[] WinConnections;
         public int Columns;
-        public int Rows;
 
         private Dictionary<PipeType, Sprite> _pipeInfos = new();
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using PlumberPuzzle.Config;
-using PlumberPuzzle.Data;
 using UnityEngine;
 
 namespace PlumberPuzzle.UI {
@@ -15,8 +14,12 @@ namespace PlumberPuzzle.UI {
             _pipeCells.Add(cellIndex, _pipes[index]);
         }
 
+        public void InitializeNull(int index) {
+            _pipes[index].Hide();
+        }
+
         public PipeView GetPipeData(int index) {
-            return _pipeCells[index];
+            return !_pipeCells.ContainsKey(index) ? null : _pipeCells[index];
         }
     }
 }
