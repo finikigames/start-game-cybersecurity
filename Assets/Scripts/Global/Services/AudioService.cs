@@ -1,4 +1,5 @@
-﻿using Global.Audio;
+﻿using System;
+using Global.Audio;
 using Zenject;
 
 namespace Global.Services {
@@ -30,6 +31,10 @@ namespace Global.Services {
 
         public void StopAdditionalSource() {
             _audioSettings.AdditionalSource.Stop();
+        }
+
+        public float GetClipLenght(string id) {
+            return _audioConfig.GetClip(id).length;
         }
     }
 }

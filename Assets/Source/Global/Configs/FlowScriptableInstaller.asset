@@ -385,5 +385,7 @@ MonoBehaviour:
         DataId: 13-lp_messages_no_message
       - Window: continue_window
         DataId: 2
+      - Window: voice_message_window
+        DataId: 
       Condition:
       - continue_button_interaction

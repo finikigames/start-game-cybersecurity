@@ -55,6 +55,7 @@ SpriteAtlas:
     - 5ea930829503954478b24b6c880a509c: 21300000
     - c3856925a76cf68449f85d99789d48e4: 21300000
     - 184071d9c97846742a96c394655d5609: 21300000
+    - f25dd8abdc0b80a45ac278f51fa52a06: 21300000
     - b6d9c1dbc98b4924fbabc3bbe91d7684: 21300000
     - 694ee84e50d64f547a17e18a55128bae: 21300000
     - 4d0c0e9e8caf53c438e819148045c0cf: 21300000
@@ -65,6 +66,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5ea930829503954478b24b6c880a509c, type: 3}
   - {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
   - {fileID: 21300000, guid: 184071d9c97846742a96c394655d5609, type: 3}
+  - {fileID: 21300000, guid: f25dd8abdc0b80a45ac278f51fa52a06, type: 3}
   - {fileID: 21300000, guid: b6d9c1dbc98b4924fbabc3bbe91d7684, type: 3}
   - {fileID: 21300000, guid: 694ee84e50d64f547a17e18a55128bae, type: 3}
   - {fileID: 21300000, guid: 4d0c0e9e8caf53c438e819148045c0cf, type: 3}
@@ -74,6 +76,7 @@ SpriteAtlas:
   - Icon_Chevron
   - Highlight
   - Icon_Vk
+  - Voice
   - Button Default
   - logo
   - Button On click
