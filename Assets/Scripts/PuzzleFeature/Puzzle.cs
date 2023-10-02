@@ -1,61 +1,110 @@
 using System;
+using Global.Flow.Condition;
+using PuzzleFeature.Configs;
+using PuzzleFeature.Flow;
+using PuzzleFeature.UI;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
+using Zenject;
 
 namespace PuzzleFeature {
-    public class Puzzle : MonoBehaviour {
-
-        [SerializeField] private Button[] _buttons;
-        [SerializeField] private GamePuzzle _puzzles;
+    public class Puzzle : MonoBehaviour, IInitializable {
+        [SerializeField] private PuzzlePiece[] _pieces;
+        [SerializeField] private GamePuzzleConfig puzzlesConfig;
         [SerializeField] private Transform _winBlock;
+        [SerializeField] private Transform _selectedFrame;
 
-        public Action OnPuzzleWin;
+        private PuzzlePiece _firstPiece;
+        private int[] _checkPattern = new []{1,-1,3,-3};
 
-        /*public GamePuzzle ChoosePuzzle(GamePuzzle[] puzzles) {
-            return puzzles[Random.Range(0, puzzles.Length)];
-        }*/
+        private FlowConditionService _flowConditionService;
+        private SwapGameWinCondition _swapGameWinCondition;
 
-        public void FillPuzzle(Button v) {
+        [Inject]
+        public void Constructor(FlowConditionService flowConditionService) {
+            _flowConditionService = flowConditionService;
+        }
+        
+        private void Awake() {
+            _swapGameWinCondition = new SwapGameWinCondition();
+            _flowConditionService.RegisterCondition("swap_win_condition", _swapGameWinCondition);
+            
+            SetNewPuzzle(puzzlesConfig);
             _winBlock.gameObject.SetActive(false);
-            //ChoosePuzzle(puzzles).PickPuzzle(v);
-            _puzzles.PickPuzzle(v);
-        }
+            _selectedFrame.gameObject.SetActive(false);
 
-        public void StartPuzzle() {
-            if (_buttons.Length == 0)
-                return;
-            foreach (var v in _buttons) {
-                FillPuzzle(v);
+            for (var index = 0; index < _pieces.Length; index++) {
+                var piece = _pieces[index];
+                piece.Initialize(ChangePuzzleSprite);
+                piece.Index = index;
             }
-
-            _buttons[0].Select();
         }
 
-        public void CheckWin() {
-            int i = 0;
-            int counter = 0;
-            foreach (var v in _buttons) {
-                if (v.image.sprite == _puzzles.Sprites[i++]) {
+        public void Initialize() {
+            _swapGameWinCondition = new SwapGameWinCondition();
+            _flowConditionService.RegisterCondition("swap_win_condition", _swapGameWinCondition);
+        }
+
+        private void StartPuzzle() {
+            if (_pieces.Length == 0)
+                return;
+            
+            puzzlesConfig.PrepareIcons();
+            
+            foreach (var piece in _pieces) {
+                puzzlesConfig.PickPuzzle(piece);
+            }
+        }
+
+        private void CheckWin() {
+            var i = 0;
+            var counter = 0;
+            foreach (var v in _pieces) {
+                if (v.Piece == puzzlesConfig.Sprites[i++]) {
                     counter++;
                 }
             }
 
-            if (counter == _buttons.Length) {
-                _winBlock.gameObject.SetActive(true);
-                OnPuzzleWin?.Invoke();
+            if (counter != _pieces.Length) return;
+            
+            //_winBlock.gameObject.SetActive(true);
+            _swapGameWinCondition.Ready = true;
+        }
+
+        private void ChangePuzzleSprite(PuzzlePiece piece) {
+            if (_firstPiece == null) {
+                _firstPiece = piece;
+                _selectedFrame.gameObject.SetActive(true);
+                _selectedFrame.transform.localPosition = _firstPiece.GetPiecePos();
+                return;
             }
+
+            if (_firstPiece == piece) {
+                _selectedFrame.gameObject.SetActive(false);
+                _firstPiece = null;
+                return;
+            }
+
+            bool canChange = false;
+            foreach (var check in _checkPattern) {
+                if (_firstPiece.Index + check != piece.Index) continue;
+                
+                canChange = true;
+            }
+            
+            if (!canChange) return;
+
+            int i = Array.IndexOf(puzzlesConfig.Sprites, piece.Piece);
+            piece.SetIcon(_firstPiece.Piece);
+            _firstPiece.SetIcon(puzzlesConfig.Sprites[i]);
+            
+            _selectedFrame.gameObject.SetActive(false);
+            _firstPiece = null;
+            
+            CheckWin();
         }
 
-        public void ChangePuzzleSprite(Button button) {
-            int i = Array.IndexOf(_puzzles.Sprites, button.image.sprite);
-            if (i == _puzzles.Sprites.Length - 1)
-                i = -1;
-            button.image.sprite = _puzzles.Sprites[++i];
-        }
-
-        public void SetNewPuzzle(GamePuzzle puzzle) {
-            _puzzles = puzzle;
+        private void SetNewPuzzle(GamePuzzleConfig puzzleConfig) {
+            puzzlesConfig = puzzleConfig;
             StartPuzzle();
         }
     }

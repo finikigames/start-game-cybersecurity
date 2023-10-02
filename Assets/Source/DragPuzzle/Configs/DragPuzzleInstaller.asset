@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e401e7e6d37d4fce941653b288aee4e1, type: 3}
+  m_Name: DragPuzzleInstaller
+  m_EditorClassIdentifier: 
+  PuzzleGameConfig:
+    DropDistance: 10
+    Sprites:
+    - {fileID: 21300000, guid: e3673290ec9ee654badbdf1d361dd61e, type: 3}
+    - {fileID: 21300000, guid: b66ee7ca68a8f5144ae810af013d47b4, type: 3}
+    - {fileID: 21300000, guid: 211a8399f36aba6408f0d9cd9cfe36dd, type: 3}
+    - {fileID: 21300000, guid: 41d5561930d6a524ea9499bbce505360, type: 3}
+    - {fileID: 21300000, guid: b6ea642b3bc765f4da0925c3e0ba2f09, type: 3}
+    - {fileID: 21300000, guid: 42cd167114a36b9408a09728665d9406, type: 3}
+    - {fileID: 21300000, guid: 918e4f7ca7da5064fbbeaa65b6777437, type: 3}
+    - {fileID: 21300000, guid: 94644651b7b918f4aa1c0ef2f188464a, type: 3}
+    - {fileID: 21300000, guid: 2ff4760ac7f94be4384d77b916b2268a, type: 3}
+    - {fileID: 21300000, guid: b5ad1607ee095294ab7bf5cb88ff2791, type: 3}
+    - {fileID: 21300000, guid: b8bb6db4d8e9eb348be5a79638aeb19a, type: 3}
+    - {fileID: 21300000, guid: f619dd6d0cd3fa140be0f4f48b887ad2, type: 3}
+    - {fileID: 21300000, guid: 016b8a4ee5c32de49a17ed5141fa9976, type: 3}
+    - {fileID: 21300000, guid: 02a166881075b2e469bd2317be73be84, type: 3}
+    - {fileID: 21300000, guid: 6c3f0113dd45406459aab477f1762980, type: 3}
+    - {fileID: 21300000, guid: d34a6266399d4794e9adc42488fb0580, type: 3}
