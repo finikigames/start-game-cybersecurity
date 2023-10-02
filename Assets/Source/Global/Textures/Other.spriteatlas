@@ -53,6 +53,7 @@ SpriteAtlas:
     - 535af590613307a4a884265bfece3c4f: 21300000
     - 8d0386d01f651ce48b06ed752a8d2f4a: 21300000
     - 5ea930829503954478b24b6c880a509c: 21300000
+    - b351e892d80f3a44cb1d06b78e19a38f: 21300000
     - c3856925a76cf68449f85d99789d48e4: 21300000
     - 184071d9c97846742a96c394655d5609: 21300000
     - f25dd8abdc0b80a45ac278f51fa52a06: 21300000
@@ -64,6 +65,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 535af590613307a4a884265bfece3c4f, type: 3}
   - {fileID: 21300000, guid: 8d0386d01f651ce48b06ed752a8d2f4a, type: 3}
   - {fileID: 21300000, guid: 5ea930829503954478b24b6c880a509c, type: 3}
+  - {fileID: 21300000, guid: b351e892d80f3a44cb1d06b78e19a38f, type: 3}
   - {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
   - {fileID: 21300000, guid: 184071d9c97846742a96c394655d5609, type: 3}
   - {fileID: 21300000, guid: f25dd8abdc0b80a45ac278f51fa52a06, type: 3}
@@ -74,6 +76,7 @@ SpriteAtlas:
   - Button On hover
   - Gradient
   - Icon_Chevron
+  - Field
   - Highlight
   - Icon_Vk
   - Voice
