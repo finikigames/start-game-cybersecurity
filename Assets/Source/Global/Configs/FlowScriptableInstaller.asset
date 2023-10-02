@@ -595,3 +595,14 @@ MonoBehaviour:
         DataId: 2
       Condition:
       - screen_click
+    - StepDescription: 21 EndWindow
+      MainSound: 0
+      AudioId: 
+      NotLoop: 0
+      Data:
+      - Window: end_game_window
+        DataId: 
+      - Window: static_window
+        DataId: 16-end_window
+      Condition:
+      - button_interaction

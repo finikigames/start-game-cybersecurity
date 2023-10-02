@@ -1,5 +1,6 @@
 ﻿using Global.Flow.Condition;
 using Global.Services;
+using Global.UI.DialogView;
 using UnityEngine;
 using Zenject;
 
@@ -42,6 +43,30 @@ namespace Global.Flow {
 
         public void Tick() {
             if (_lastStep != null && _conditionService.CheckConditions(_lastStep.Condition)) {
+                bool hasDialog = false;
+
+                foreach (var data in _lastStep.Data) {
+                    if (data.Window == "dialog_window") {
+                        hasDialog = true;
+                    }
+                }
+
+                bool hasScreenClick = false;
+
+                foreach (var condition in _lastStep.Condition) {
+                    if (condition == "screen_click") {
+                        hasScreenClick = true;
+                    }
+                }
+
+                if (hasDialog && hasScreenClick) {
+                    var window = (DialogWindow)_sceneSettings.Windows["dialog_window"];
+                    if (!window.AllTextShowed) {
+                        window.ShowAllText();
+                        return;
+                    }
+                }
+                
                 DisposeStep(_lastStep);
 
                 _currentIndex++;

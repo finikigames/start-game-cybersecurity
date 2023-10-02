@@ -12,6 +12,9 @@ namespace Global.UI.DialogView {
         
         public DialogConfig Config;
 
+        public bool AllTextShowed;
+        private Coroutine _coroutine;
+        
         [SerializeField] private float _timeBetweenCharacters;
         
         public override async void Initialize(string id) {
@@ -19,8 +22,15 @@ namespace Global.UI.DialogView {
 
             NameText.text = data.Name;
             ReplicaText.text = data.Replica;
+            AllTextShowed = false;
 
-            StartCoroutine(TextVisible());
+            _coroutine = StartCoroutine(TextVisible());
+        }
+
+        public void ShowAllText() {
+            StopCoroutine(_coroutine);
+            AllTextShowed = true;
+            ReplicaText.maxVisibleCharacters = ReplicaText.text.Length;
         }
         
         private IEnumerator TextVisible() {
@@ -39,6 +49,10 @@ namespace Global.UI.DialogView {
                 counter += 1;
                 yield return new WaitForSeconds(_timeBetweenCharacters);
             }
+
+            AllTextShowed = true;
         }
+        
+        
     }
 }
