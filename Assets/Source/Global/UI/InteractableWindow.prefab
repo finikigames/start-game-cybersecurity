@@ -258,5 +258,5 @@ MonoBehaviour:
       ButtonSize: {x: 320, y: 80}
     - Id: 7_step_login
       ButtonSprite: {fileID: 21300000, guid: c3856925a76cf68449f85d99789d48e4, type: 3}
-      ButtonPosition: {x: 0, y: 37.2}
-      ButtonSize: {x: 320, y: 80}
+      ButtonPosition: {x: 0, y: -351}
+      ButtonSize: {x: 470, y: 110}

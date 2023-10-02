@@ -15,6 +15,7 @@ namespace Main.UI.PasswordView {
         public RectTransform Parent;
         public RectTransform RemovePoint;
 
+        public TextMeshProUGUI WinText;
         public TextMeshProUGUI PasswordText;
         
         private LetterGeneratorService _letterGeneratorService;
@@ -84,7 +85,18 @@ namespace Main.UI.PasswordView {
             _spawnTime += Time.deltaTime;
 
             if (_index >= _passwordCopy.Length) {
+                if (_condition.Ready) return;
+                
                 _condition.Ready = true;
+
+                WinText.gameObject.SetActive(true);
+                
+                if (_views.Count == 0) return;
+                foreach (var view in _views) {
+                    _letterGeneratorService.Release(view.gameObject);
+                }
+                
+                _views.Clear();
                 return;
             }
             MoveLetters();
